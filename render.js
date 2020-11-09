@@ -3,7 +3,8 @@ const Renderer = function () {
         $("#posts").empty()
         for (let post of posts) {
             let newPostId = post.id
-            $("#posts").append("<div class='pcon' data-id="+ `${newPostId}` + "> <h1>" + post.text + "</h1></div>")
+            const postBox = $("<div class='pcon' data-id="+ `${newPostId}` + "> <h1>" + post.text + "</h1></div>")
+            $("#posts").append(postBox)
             let newDiv = $("<div></div>")
             $(`div[data-id=${newPostId}]`).append(newDiv)
             for (let comment of post.comments) {
